@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Starter Pack: Storytelling for Visibility & Income — Princess Jane Okah</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0E0C0A;
+  --charcoal:#1A1814;
+  --warm:#2C2420;
+  --sand:#E8DFD0;
+  --parchment:#F5F0E8;
+  --cream:#FBF8F3;
+  --rust:#C4521A;
+  --ember:#E07840;
+  --gold:#C9973A;
+  --sage:#4A7A5A;
+  --body:#5C5248;
+  --light:#9C9088;
+  --border:rgba(92,82,72,0.12);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--cream);
+  color:var(--body);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:var(--ink);
+  display:grid;
+  grid-template-rows:1fr auto;
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-texture{
+  position:absolute;inset:0;
+  opacity:0.035;
+  background-image:repeating-linear-gradient(45deg,var(--sand) 0,var(--sand) 1px,transparent 0,transparent 50%);
+  background-size:18px 18px;
+}
+
+.hero-glow{
+  position:absolute;
+  width:700px;height:700px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(196,82,26,0.12) 0%,transparent 70%);
+  top:-200px;right:-150px;
+  pointer-events:none;
+}
+
+.hero-glow2{
+  position:absolute;
+  width:500px;height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(201,151,58,0.07) 0%,transparent 70%);
+  bottom:-100px;left:-100px;
+  pointer-events:none;
+}
+
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:calc(100vh - 80px);
+  position:relative;z-index:2;
+}
+
+.hero-left{
+  padding:88px 64px 64px;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  animation:fadeUp 0.9s ease both;
+}
+
+.hero-right{
+  display:flex;align-items:center;
+  justify-content:center;
+  padding:64px 48px;
+  animation:fadeIn 1.1s ease both;
+  animation-delay:0.3s;
+}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(196,82,26,0.15);
+  border:1px solid rgba(196,82,26,0.25);
+  border-radius:100px;
+  padding:6px 16px;
+  font-size:10px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--ember);
+  margin-bottom:36px;
+}
+
+.badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--ember);
+  animation:pulse 2s ease infinite;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(40px,5.5vw,68px);
+  font-weight:700;
+  color:var(--sand);
+  line-height:1.08;
+  letter-spacing:-0.025em;
+  margin-bottom:24px;
+}
+
+.hero h1 em{font-style:italic;color:var(--ember)}
+
+.hero-sub{
+  font-size:16px;font-weight:300;
+  color:rgba(232,223,208,0.5);
+  line-height:1.9;max-width:460px;
+  margin-bottom:48px;
+}
+
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--rust);color:var(--cream);
+  font-size:12px;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;
+  padding:18px 44px;border-radius:2px;
+  text-decoration:none;
+  transition:background 0.25s,transform 0.2s,box-shadow 0.2s;
+  align-self:flex-start;
+  box-shadow:0 8px 32px rgba(196,82,26,0.25);
+}
+
+.hero-cta:hover{
+  background:var(--ember);
+  transform:translateY(-2px);
+  box-shadow:0 12px 40px rgba(196,82,26,0.35);
+}
+
+.hero-cta-arrow{font-size:16px;transition:transform 0.2s}
+.hero-cta:hover .hero-cta-arrow{transform:translateX(4px)}
+
+.hero-note{
+  margin-top:16px;font-size:12px;
+  color:rgba(232,223,208,0.25);
+  font-style:italic;font-family:'Playfair Display',serif;
+}
+
+/* Hero card */
+.hero-card{
+  background:rgba(232,223,208,0.04);
+  border:1px solid rgba(232,223,208,0.1);
+  border-radius:8px;
+  padding:44px 36px;
+  width:100%;max-width:380px;
+}
+
+.card-scalpel{font-size:36px;margin-bottom:24px;display:block;opacity:0.7}
+
+.card-offer-name{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;
+  color:var(--sand);
+  line-height:1.2;margin-bottom:20px;
+}
+
+.card-offer-name em{font-style:italic;color:var(--ember)}
+
+.card-divider{
+  height:1px;background:rgba(232,223,208,0.08);
+  margin:20px 0;
+}
+
+.card-details{display:flex;flex-direction:column;gap:14px}
+
+.card-detail{
+  display:flex;align-items:center;gap:12px;
+  font-size:13px;font-weight:300;
+  color:rgba(232,223,208,0.5);
+}
+
+.card-detail-icon{font-size:16px;flex-shrink:0}
+
+.card-price-row{
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(232,223,208,0.08);
+  display:flex;align-items:baseline;gap:8px;
+}
+
+.card-price{
+  font-family:'Playfair Display',serif;
+  font-size:48px;font-weight:900;
+  color:var(--ember);line-height:1;
+}
+
+.card-price-label{
+  font-size:12px;color:rgba(232,223,208,0.3);
+  letter-spacing:0.12em;text-transform:uppercase;
+}
+
+/* ── HERO BOTTOM BAR ── */
+.hero-bar{
+  position:relative;z-index:2;
+  background:rgba(232,223,208,0.04);
+  border-top:1px solid rgba(232,223,208,0.06);
+  padding:18px 64px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+
+.bar-name{
+  font-family:'Playfair Display',serif;
+  font-size:16px;font-style:italic;
+  color:rgba(232,223,208,0.28);
+}
+
+.bar-role{
+  font-size:10px;letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(232,223,208,0.14);
+}
+
+/* ── HOOK SECTION ── */
+.hook{
+  padding:100px 72px;
+  background:var(--cream);
+  max-width:860px;
+  margin:0 auto;
+}
+
+.hook-eyebrow{
+  font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--rust);font-weight:500;margin-bottom:16px;display:block;
+}
+
+.hook h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,4.5vw,52px);
+  font-weight:700;color:var(--ink);
+  line-height:1.1;letter-spacing:-0.02em;
+  margin-bottom:28px;
+}
+
+.hook h2 em{font-style:italic;color:var(--rust)}
+
+.hook-body{
+  font-size:16px;font-weight:300;
+  color:var(--body);line-height:1.95;
+}
+
+.hook-body p{margin-bottom:20px}
+.hook-body p:last-child{margin-bottom:0}
+
+.hook-body strong{
+  color:var(--ink);font-weight:500;
+}
+
+/* ── WHAT IS STORYTELLING ── */
+.what{
+  background:var(--charcoal);
+  padding:100px 72px;
+}
+
+.what-inner{
+  max-width:900px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:72px;align-items:center;
+}
+
+.what-text .sec-eyebrow{
+  font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--ember);font-weight:500;margin-bottom:16px;display:block;
+}
+
+.what-text h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3.5vw,44px);
+  font-weight:700;color:var(--sand);
+  line-height:1.15;letter-spacing:-0.02em;
+  margin-bottom:20px;
+}
+
+.what-text h2 em{font-style:italic;color:var(--ember)}
+
+.what-text p{
+  font-size:15px;font-weight:300;
+  color:rgba(232,223,208,0.48);
+  line-height:1.9;margin-bottom:18px;
+}
+
+.what-cards{display:flex;flex-direction:column;gap:14px}
+
+.what-card{
+  background:rgba(232,223,208,0.04);
+  border:1px solid rgba(232,223,208,0.07);
+  border-left:2px solid var(--ember);
+  border-radius:4px;
+  padding:20px 22px;
+}
+
+.what-card-title{
+  font-family:'Playfair Display',serif;
+  font-size:16px;font-weight:700;
+  color:var(--sand);margin-bottom:6px;
+}
+
+.what-card-body{
+  font-size:13px;font-weight:300;
+  color:rgba(232,223,208,0.45);
+  line-height:1.7;
+}
+
+/* ── WHAT YOU LEARN ── */
+.learn{
+  padding:100px 72px;
+  background:var(--parchment);
+}
+
+.learn-inner{max-width:900px;margin:0 auto}
+
+.sec-eyebrow{
+  font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--rust);font-weight:500;margin-bottom:16px;display:block;
+}
+
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,4.5vw,52px);
+  font-weight:700;color:var(--ink);
+  line-height:1.1;letter-spacing:-0.025em;
+  margin-bottom:12px;
+}
+
+.sec-title em{font-style:italic;color:var(--rust)}
+
+.sec-sub{
+  font-size:15px;font-weight:300;
+  color:var(--light);line-height:1.8;
+  margin-bottom:56px;max-width:520px;
+}
+
+.learn-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.learn-item{
+  background:var(--cream);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:28px 24px;
+  display:flex;gap:18px;align-items:flex-start;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+
+.learn-item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 32px rgba(14,12,10,0.07);
+}
+
+.learn-num{
+  font-family:'Playfair Display',serif;
+  font-size:32px;font-weight:900;
+  color:rgba(196,82,26,0.15);
+  line-height:1;flex-shrink:0;
+  padding-top:2px;
+}
+
+.learn-content{}
+.learn-title{
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-weight:700;
+  color:var(--ink);margin-bottom:8px;
+  line-height:1.25;
+}
+.learn-body{
+  font-size:13px;font-weight:300;
+  color:var(--body);line-height:1.75;
+}
+
+/* ── WHAT YOU GET ── */
+.get{
+  padding:100px 72px;
+  background:var(--ink);
+}
+
+.get-inner{max-width:900px;margin:0 auto}
+
+.get .sec-eyebrow{color:var(--ember)}
+.get .sec-title{color:var(--sand)}
+.get .sec-title em{color:var(--ember)}
+.get .sec-sub{color:rgba(232,223,208,0.38)}
+
+.get-list{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-top:0;
+}
+
+.get-item{
+  background:rgba(232,223,208,0.04);
+  border:1px solid rgba(232,223,208,0.07);
+  border-radius:6px;
+  padding:28px 22px;
+  text-align:center;
+  transition:background 0.25s,border-color 0.25s,transform 0.2s;
+}
+
+.get-item:hover{
+  background:rgba(232,223,208,0.07);
+  border-color:rgba(196,82,26,0.25);
+  transform:translateY(-3px);
+}
+
+.get-icon{font-size:30px;margin-bottom:14px;display:block}
+
+.get-title{
+  font-family:'Playfair Display',serif;
+  font-size:16px;font-weight:700;
+  color:var(--sand);margin-bottom:8px;
+}
+
+.get-body{
+  font-size:12px;font-weight:300;
+  color:rgba(232,223,208,0.4);
+  line-height:1.75;
+}
+
+/* ── REASSURANCE ── */
+.reassure{
+  padding:100px 72px;
+  background:var(--cream);
+}
+
+.reassure-inner{
+  max-width:860px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:72px;align-items:start;
+}
+
+.reassure-text h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3.8vw,46px);
+  font-weight:700;color:var(--ink);
+  line-height:1.15;letter-spacing:-0.02em;
+  margin-bottom:20px;
+}
+
+.reassure-text h2 em{font-style:italic;color:var(--rust)}
+
+.reassure-text p{
+  font-size:15px;font-weight:300;
+  color:var(--body);line-height:1.9;
+  margin-bottom:18px;
+}
+
+.reassure-text p:last-child{margin-bottom:0}
+
+.reassure-list{display:flex;flex-direction:column;gap:14px}
+
+.reassure-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:18px 20px;
+  background:var(--parchment);
+  border-radius:4px;
+  border-left:2px solid var(--sage);
+}
+
+.reassure-dot{
+  width:20px;height:20px;border-radius:50%;
+  background:var(--sage);color:white;
+  font-size:11px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:1px;
+}
+
+.reassure-text-item{
+  font-size:14px;font-weight:300;
+  color:var(--body);line-height:1.65;
+}
+
+/* ── QUOTE ── */
+.quote-section{
+  background:var(--rust);
+  padding:80px 72px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+
+.quote-section::before{
+  content:'';position:absolute;
+  top:-120px;left:-80px;
+  width:400px;height:400px;border-radius:50%;
+  background:rgba(251,248,243,0.06);
+}
+
+.quote-inner{position:relative;z-index:2;max-width:640px;margin:0 auto}
+
+.quote-mark{
+  font-family:'Playfair Display',serif;
+  font-size:80px;color:rgba(251,248,243,0.2);
+  line-height:0.6;display:block;
+  margin-bottom:28px;
+}
+
+.quote-text{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(18px,3vw,28px);
+  font-style:italic;font-weight:400;
+  color:var(--cream);
+  line-height:1.6;margin-bottom:24px;
+}
+
+.quote-attr{
+  font-size:10px;letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(251,248,243,0.4);
+}
+
+/* ── CTA ── */
+.cta{
+  padding:100px 72px;
+  background:var(--parchment);
+}
+
+.cta-inner{
+  max-width:820px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:72px;align-items:start;
+}
+
+.cta-text .sec-eyebrow{margin-bottom:14px}
+
+.cta-text h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3.8vw,46px);
+  font-weight:700;color:var(--ink);
+  line-height:1.15;letter-spacing:-0.02em;
+  margin-bottom:20px;
+}
+
+.cta-text h2 em{font-style:italic;color:var(--rust)}
+
+.cta-text p{
+  font-size:15px;font-weight:300;
+  color:var(--body);line-height:1.9;margin-bottom:28px;
+}
+
+.cta-box{
+  background:var(--cream);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:40px 36px;
+}
+
+.cta-offer-title{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;
+  color:var(--ink);margin-bottom:6px;
+  line-height:1.25;
+}
+
+.cta-offer-sub{
+  font-size:12px;font-style:italic;
+  font-family:'Playfair Display',serif;
+  color:var(--light);margin-bottom:24px;
+}
+
+.cta-price-row{
+  display:flex;align-items:baseline;gap:8px;
+  margin-bottom:24px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--border);
+}
+
+.cta-price{
+  font-family:'Playfair Display',serif;
+  font-size:52px;font-weight:900;
+  color:var(--rust);line-height:1;
+}
+
+.cta-price-label{
+  font-size:11px;color:var(--light);
+  letter-spacing:0.14em;text-transform:uppercase;
+}
+
+.cta-includes{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+
+.cta-inc{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:300;color:var(--body);
+}
+
+.cta-inc-dot{
+  width:16px;height:16px;border-radius:50%;
+  background:var(--sage);color:white;
+  font-size:9px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+
+.cta-btn{
+  display:block;width:100%;
+  background:var(--rust);color:var(--cream);
+  font-family:'Jost',sans-serif;
+  font-size:12px;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;
+  padding:16px;border-radius:2px;
+  text-align:center;text-decoration:none;
+  transition:background 0.25s,transform 0.2s,box-shadow 0.2s;
+  border:none;cursor:pointer;
+  box-shadow:0 6px 24px rgba(196,82,26,0.2);
+}
+
+.cta-btn:hover{
+  background:var(--ember);
+  transform:translateY(-2px);
+  box-shadow:0 10px 32px rgba(196,82,26,0.3);
+}
+
+.cta-guarantee{
+  margin-top:12px;font-size:11px;
+  color:var(--light);text-align:center;
+  font-style:italic;font-family:'Playfair Display',serif;
+}
+
+/* ── MOTIVATION CLOSE ── */
+.motivation{
+  padding:100px 72px;
+  background:var(--ink);
+}
+
+.motivation-inner{max-width:720px;margin:0 auto;text-align:center}
+
+.motivation-scalpel{font-size:40px;display:block;margin-bottom:32px;opacity:0.4}
+
+.motivation h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4.5vw,52px);
+  font-weight:700;color:var(--sand);
+  line-height:1.15;letter-spacing:-0.02em;
+  margin-bottom:28px;
+}
+
+.motivation h2 em{font-style:italic;color:var(--ember)}
+
+.motivation-body{
+  font-size:16px;font-weight:300;
+  color:rgba(232,223,208,0.48);
+  line-height:1.95;margin-bottom:36px;
+}
+
+.motivation-body p{margin-bottom:18px}
+
+.motivation-sign{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-style:italic;
+  color:rgba(232,223,208,0.3);
+  display:block;margin-top:28px;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--charcoal);
+  padding:32px 72px;
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+}
+
+.footer-name{
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-style:italic;
+  color:rgba(232,223,208,0.3);
+}
+
+.footer-tag{
+  font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(232,223,208,0.14);
+}
+
+@media(max-width:768px){
+  .hero-inner,.what-inner,.reassure-inner,.cta-inner{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:64px 28px 48px}
+  .hero-bar{padding:16px 28px}
+  .hook,.what,.learn,.get,.reassure,.quote-section,.cta,.motivation,footer{padding-left:28px;padding-right:28px}
+  .learn-grid,.get-list{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(40px,10vw,60px)}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        One Day Virtual Class · Now Open
+      </div>
+
+      <h1>You have a story.<br/>It is time it<br/><em>paid you.</em></h1>
+
+      <p class="hero-sub">
+        A beginner-friendly class that teaches you how to use storytelling to show up online, build a personal brand, and open the door to real income opportunities — even if you have never written publicly before.
+      </p>
+
+      <a href="#join" class="hero-cta">
+        Reserve Your Spot
+        <span class="hero-cta-arrow">→</span>
+      </a>
+
+      <p class="hero-note">No experience required. Just a story worth telling.</p>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <span class="card-scalpel">🔪</span>
+        <p class="card-offer-name"><em>Starter Pack:</em><br/>Storytelling for Visibility & Income</p>
+        <div class="card-divider"></div>
+        <div class="card-details">
+          <div class="card-detail">
+            <span class="card-detail-icon">📅</span>
+            <span>One day virtual class</span>
+          </div>
+          <div class="card-detail">
+            <span class="card-detail-icon">💻</span>
+            <span>Live training with replay access</span>
+          </div>
+          <div class="card-detail">
+            <span class="card-detail-icon">🎯</span>
+            <span>Beginner friendly — start from zero</span>
+          </div>
+          <div class="card-detail">
+            <span class="card-detail-icon">🌍</span>
+            <span>Open to anyone, anywhere</span>
+          </div>
+        </div>
+        <div class="card-price-row">
+          <span class="card-price">$7</span>
+          <span class="card-price-label">one time · full access</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bar">
+    <p class="bar-name">Princess Jane Okah</p>
+    <p class="bar-role">LinkedIn Story Surgeon · Founder, Zero to Visibility</p>
+  </div>
+</header>
+
+<!-- HOOK -->
+<section class="hook">
+  <span class="hook-eyebrow">Before We Begin</span>
+  <h2>You are not silent because<br/>you have nothing to say.<br/>You are silent because <em>nobody taught you how.</em></h2>
+  <div class="hook-body">
+    <p>
+      You scroll through LinkedIn, Instagram, or X every day. You see people — people who are no more talented than you — building audiences, landing opportunities, getting paid for their words. And somewhere in the back of your mind a quiet thought surfaces: <strong>why not me?</strong>
+    </p>
+    <p>
+      Maybe you have tried posting before. Maybe you wrote something, sat with it for twenty minutes, then deleted it because it did not sound right. Maybe you have been telling yourself you will start when you are more confident. When you have more followers. When you know what to say.
+    </p>
+    <p>
+      Here is what I need you to hear: <strong>the only thing standing between you and visibility is knowing how to frame your story.</strong> You already have everything else. The experiences, the insight, the life lived — all of it is material. You just need someone to show you how to use it.
+    </p>
+    <p>
+      That is exactly what this class is for.
+    </p>
+  </div>
+</section>
+
+<!-- WHAT IS STORYTELLING -->
+<section class="what">
+  <div class="what-inner">
+    <div class="what-text">
+      <span class="sec-eyebrow">Why Storytelling</span>
+      <h2>Storytelling is not a talent.<br/>It is a <em>skill.</em></h2>
+      <p>
+        In a world full of noise, the people who get chosen are not always the most qualified. They are the ones who communicate most clearly. Who make you feel something. Who tell the truth in a way that makes you think: this person gets it.
+      </p>
+      <p>
+        Storytelling is how you build trust before you ever meet someone. It is how you attract opportunities without chasing them. It is how your writing becomes your most powerful professional tool.
+      </p>
+      <p>
+        And the best part? You do not need to be a professional writer to do it. You just need to start.
+      </p>
+    </div>
+    <div class="what-cards">
+      <div class="what-card">
+        <p class="what-card-title">Storytelling builds trust</p>
+        <p class="what-card-body">People do not buy from strangers. They buy from people they have been reading, watching, and quietly rooting for. Consistent storytelling creates that familiarity.</p>
+      </div>
+      <div class="what-card">
+        <p class="what-card-title">Storytelling creates visibility</p>
+        <p class="what-card-body">Every time you share a story that resonates, you reach people who were never looking for you. That is how audiences grow — not through algorithms, but through truth that travels.</p>
+      </div>
+      <div class="what-card">
+        <p class="what-card-title">Storytelling opens income doors</p>
+        <p class="what-card-body">Your story positions you as someone worth paying attention to. And people who pay attention eventually pay money — for your products, your services, your knowledge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU LEARN -->
+<section class="learn">
+  <div class="learn-inner">
+    <span class="sec-eyebrow">What You Will Learn</span>
+    <h2 class="sec-title">Five things we cover<br/><em>inside the class.</em></h2>
+    <p class="sec-sub">Each session is practical, conversational, and designed to give you something you can use the same day.</p>
+
+    <div class="learn-grid">
+      <div class="learn-item">
+        <div class="learn-num">01</div>
+        <div class="learn-content">
+          <p class="learn-title">How to tell engaging stories online</p>
+          <p class="learn-body">The structure behind posts that make people stop scrolling. How to open a story, hold attention, and end in a way that makes someone want to follow you. Simple and repeatable.</p>
+        </div>
+      </div>
+      <div class="learn-item">
+        <div class="learn-num">02</div>
+        <div class="learn-content">
+          <p class="learn-title">How to turn your personal experiences into content</p>
+          <p class="learn-body">You do not need to be an expert. You need to be honest. We will show you how to find the lesson inside your ordinary moments and write about it in a way that connects.</p>
+        </div>
+      </div>
+      <div class="learn-item">
+        <div class="learn-num">03</div>
+        <div class="learn-content">
+          <p class="learn-title">How to write posts that attract opportunities</p>
+          <p class="learn-body">There is a difference between writing for applause and writing for outcomes. We will teach you how to craft posts that position you — so opportunities find you instead of the other way around.</p>
+        </div>
+      </div>
+      <div class="learn-item">
+        <div class="learn-num">04</div>
+        <div class="learn-content">
+          <p class="learn-title">Basics of personal branding through storytelling</p>
+          <p class="learn-body">What your brand actually is, how storytelling shapes it, and how to show up consistently online without burning out or sounding like everyone else.</p>
+        </div>
+      </div>
+      <div class="learn-item" style="grid-column:1/-1">
+        <div class="learn-num">05</div>
+        <div class="learn-content">
+          <p class="learn-title">Beginner monetization paths for writers online</p>
+          <p class="learn-body">Digital products, ghostwriting, consulting, content creation for brands — we will walk through real, accessible income paths that writers at every stage can start building toward. You do not need 10,000 followers. You need clarity and a starting point.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="get">
+  <div class="get-inner">
+    <span class="sec-eyebrow" style="color:var(--ember)">What Is Included</span>
+    <h2 class="sec-title" style="color:var(--sand)">Everything you need<br/><em>to leave ready.</em></h2>
+    <p class="sec-sub" style="color:rgba(232,223,208,0.38);margin-bottom:48px">One entry fee. Full access to all of this.</p>
+
+    <div class="get-list">
+      <div class="get-item">
+        <span class="get-icon">🎙️</span>
+        <p class="get-title">Live Training</p>
+        <p class="get-body">A full day of focused, interactive teaching led by Princess Jane Okah. Practical, warm, and designed for people starting from zero.</p>
+      </div>
+      <div class="get-item">
+        <span class="get-icon">🧩</span>
+        <p class="get-title">Beginner Storytelling Framework</p>
+        <p class="get-body">A clear, simple framework you can use to structure any story — for any platform, any niche, at any stage of your journey.</p>
+      </div>
+      <div class="get-item">
+        <span class="get-icon">📝</span>
+        <p class="get-title">Content Prompts and Templates</p>
+        <p class="get-body">Ready-to-use writing prompts and post templates so you never stare at a blank page again. Just fill, personalise, and publish.</p>
+      </div>
+      <div class="get-item">
+        <span class="get-icon">🎬</span>
+        <p class="get-title">Replay Access</p>
+        <p class="get-body">Can not make it live? Or want to revisit a section? You get full replay access so you can learn at your own pace after the class.</p>
+      </div>
+      <div class="get-item">
+        <span class="get-icon">💬</span>
+        <p class="get-title">Live Q&A Session</p>
+        <p class="get-body">Bring your real questions. We close the class with an open Q&A so you leave with clarity, not confusion.</p>
+      </div>
+      <div class="get-item">
+        <span class="get-icon">🔪</span>
+        <p class="get-title">Community Access</p>
+        <p class="get-body">You are not alone after the class. Join a community of beginners on the same journey, sharing wins and getting feedback.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASSURANCE -->
+<section class="reassure">
+  <div class="reassure-inner">
+    <div class="reassure-text">
+      <span class="sec-eyebrow">No Experience Needed</span>
+      <h2>You do not need to<br/>be ready.<br/>You just need to<br/><em>show up.</em></h2>
+      <p>
+        The biggest lie the internet tells beginners is that you need to have it all figured out before you start. You do not. Every person you admire online started with zero followers, zero confidence, and zero certainty that anyone would care.
+      </p>
+      <p>
+        This class was built for exactly where you are right now. Not where you think you need to be before you can begin.
+      </p>
+      <p>
+        We do not assume any writing experience. We do not use jargon. We meet you at the beginning and walk with you from there.
+      </p>
+    </div>
+    <div class="reassure-list">
+      <div class="reassure-item">
+        <div class="reassure-dot">✓</div>
+        <p class="reassure-text-item">You do not need a following. This class teaches you how to build one from scratch using stories that connect.</p>
+      </div>
+      <div class="reassure-item">
+        <div class="reassure-dot">✓</div>
+        <p class="reassure-text-item">You do not need to be a professional writer. Everyday language, when directed well, is more powerful than polished prose.</p>
+      </div>
+      <div class="reassure-item">
+        <div class="reassure-dot">✓</div>
+        <p class="reassure-text-item">You do not need a perfect life story. Ordinary, honest, specific — that is what resonates online.</p>
+      </div>
+      <div class="reassure-item">
+        <div class="reassure-dot">✓</div>
+        <p class="reassure-text-item">You do not need to have your niche figured out yet. The clarity comes from starting, not from waiting.</p>
+      </div>
+      <div class="reassure-item">
+        <div class="reassure-dot">✓</div>
+        <p class="reassure-text-item">You do not need to be confident. You just need to be willing. Confidence is built by doing, not by preparing endlessly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">The most magnetic thing you can be online is understood. Storytelling is how you get there.</p>
+    <p class="quote-attr">Princess Jane Okah · LinkedIn Story Surgeon</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="join">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <span class="sec-eyebrow">Join the Class</span>
+      <h2>One day.<br/>One decision.<br/><em>Everything changes.</em></h2>
+      <p>
+        For the price of a meal, you get the framework, the tools, and the direction to finally start showing up online the way you have always wanted to. This is your starting point. Not later. Now.
+      </p>
+      <p>
+        Spots are limited to keep the session intimate and personal. Once it is full, it is full.
+      </p>
+    </div>
+
+    <div class="cta-box">
+      <p class="cta-offer-title">Starter Pack: Storytelling for<br/>Visibility & Income</p>
+      <p class="cta-offer-sub">One day virtual class · Full access</p>
+
+      <div class="cta-price-row">
+        <span class="cta-price">$7</span>
+        <span class="cta-price-label">one time payment</span>
+      </div>
+
+      <div class="cta-includes">
+        <div class="cta-inc"><span class="cta-inc-dot">✓</span>Live training session</div>
+        <div class="cta-inc"><span class="cta-inc-dot">✓</span>Beginner storytelling framework</div>
+        <div class="cta-inc"><span class="cta-inc-dot">✓</span>Content prompts and templates</div>
+        <div class="cta-inc"><span class="cta-inc-dot">✓</span>Full replay access</div>
+        <div class="cta-inc"><span class="cta-inc-dot">✓</span>Live Q&A session</div>
+        <div class="cta-inc"><span class="cta-inc-dot">✓</span>Community access</div>
+      </div>
+
+      <button class="cta-btn" onclick="this.textContent='You are in. See you inside 🔪'">
+        Reserve My Spot — $7
+      </button>
+      <p class="cta-guarantee">Secure. Simple. One time payment. No hidden fees.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOTIVATIONAL CLOSE -->
+<section class="motivation">
+  <div class="motivation-inner">
+    <span class="motivation-scalpel">🔪</span>
+    <h2>Visibility can<br/><em>change your life.</em><br/>This is where it starts.</h2>
+    <div class="motivation-body">
+      <p>
+        There is a version of you that posts without fear. That writes things that make strangers stop and say: this is exactly what I needed to read today. That wakes up to messages from people who found you, followed you, and now want to work with you.
+      </p>
+      <p>
+        That version of you is not further away than you think. It is one story away. One post away. One decision to stop waiting and start showing up — even imperfectly, even quietly, even from the very beginning.
+      </p>
+      <p>
+        You do not need a big platform to change your life. You need a clear story and the courage to share it. We will give you the first part. The second part is yours to take.
+      </p>
+      <p>
+        The class is here. The price is accessible. The only thing left is you.
+      </p>
+    </div>
+    <a href="#join" class="hero-cta" style="margin:0 auto">
+      I am ready — Reserve My Spot
+      <span class="hero-cta-arrow">→</span>
+    </a>
+    <span class="motivation-sign">Princess Jane Okah · LinkedIn Story Surgeon</span>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-name">Princess Jane Okah</p>
+  <p class="footer-tag">Starter Pack · Storytelling for Visibility & Income</p>
+</footer>
+
+</body>
+</html>
